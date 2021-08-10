@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+// .flex
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+// possition
+.relative{
+  position: relative;
+}
+.absolute{
+  position: absolute;
+}
+// allignment class
+.left{
+  text-align: left;
+}
+.center{
+  text-align: center;
+}
+.right{
+  text-align: right;
+}
+// margin class
+.m10{
+  margin: 10px;
+}
+.m20{
+  margin: 20px;
+}
+.mr10{
+  margin-right: 10px;
+}
+.ml10{
+  margin-left: 10px;
+}
+.mt30{
+  margin-top: 30px;
+}
+
+// padding class
+.p10{
+  padding: 10px;
+}
+.p20{
+  padding: 20px;
+}
+.pr20{
+  padding-right: 20px;
+}
+.pt20{
+  padding-top: 20px;
+}
+.pb20{
+  padding-bottom: 20px;
+}
+// height class
+.height250{
+  max-height: 250px;
+}
+.max-width{
+  max-width: 100%;
+}
+

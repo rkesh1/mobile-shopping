@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import ProductListContext from "./context/productListContext";
+import LoginContext from "./context/loginContext";
+import Header from "./components/Header";
+import Home from "./Home";
+import ProductDetail from "./ProductDetail";
+import Cart from "./Cart";
+import Login from "./Login";
 
-function App() {
+// bootstrap css for grid
+import "bootstrap-scss/bootstrap.scss";
+
+const App = () => {
+  const [isLogin, setIsLogin] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+  const value = {
+    products,
+    setProducts,
+    cart,
+    setCart,
+  };
+  const loginInitial = { isLogin, setIsLogin };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LoginContext.Provider value={loginInitial}>
+      <ProductListContext.Provider value={value}>
+        <div className="container">
+          <Router>
+            <Header />
+            <Switch>
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/detail/:id" component={ProductDetail} />
+              <Route exact path="/cart" component={Cart} />
+              <Route exact path="/login" component={Login} />
+            </Switch>
+          </Router>
+        </div>
+      </ProductListContext.Provider>
+    </LoginContext.Provider>
   );
-}
+};
 
 export default App;
